@@ -1,11 +1,13 @@
-OHEnacted <- read.csv("~\\Gerrymander\\OH-Enacted.csv", header = TRUE) #Get Ohio Enacted Map
-OHProp <- read.csv("~\\Gerrymander\\OH-Proportional.csv", header=TRUE) #Get Ohio Fair Map
-ILEnacted <- read.csv("~\\Gerrymander\\IL-Enacted.csv", header=TRUE)   #Get Illinois Enacted Map
-ILProp <- read.csv("~\\Gerrymander\\IL-Proportional.csv", header=TRUE) #Get Illinois Fair Map
-COEnacted <- read.csv("~\\Gerrymander\\CO-Enacted.csv", header=TRUE)   #Get Colorado Enacted Map
-COProp <- read.csv("~\\Gerrymander\\CO-Proportional.csv", header=TRUE) #Get Colorado Fair Map
-MIEnacted <- read.csv("~\\Gerrymander\\MI-Enacted.csv", header=TRUE)   #Get Michigan Enacted Map
-MIProp <- read.csv("~\\Gerrymander\\MI-Proportional.csv", header=TRUE) #Get Michigan Fair Map
+getwd()
+setwd(getwd())
+OHEnacted <- read.csv("OH-Enacted.csv", header = TRUE) #Get Ohio Enacted Map
+OHProp <- read.csv("OH-Proportional.csv", header=TRUE) #Get Ohio Fair Map
+ILEnacted <- read.csv("IL-Enacted.csv", header=TRUE)   #Get Illinois Enacted Map
+ILProp <- read.csv("IL-Proportional.csv", header=TRUE) #Get Illinois Fair Map
+COEnacted <- read.csv("CO-Enacted.csv", header=TRUE)   #Get Colorado Enacted Map
+COProp <- read.csv("CO-Proportional.csv", header=TRUE) #Get Colorado Fair Map
+MIEnacted <- read.csv("MI-Enacted.csv", header=TRUE)   #Get Michigan Enacted Map
+MIProp <- read.csv("MI-Proportional.csv", header=TRUE) #Get Michigan Fair Map
 Map_Score <- function(Map1, Map2, Size, Begin) {
   numOfCompetitive1 = 0
   numOfD1 = 0;
