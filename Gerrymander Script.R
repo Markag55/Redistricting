@@ -4,6 +4,8 @@ ILEnacted <- read.csv("~\\Gerrymander\\IL-Enacted.csv", header=TRUE)   #Get Illi
 ILProp <- read.csv("~\\Gerrymander\\IL-Proportional.csv", header=TRUE) #Get Illinois Fair Map
 COEnacted <- read.csv("~\\Gerrymander\\CO-Enacted.csv", header=TRUE)   #Get Colorado Enacted Map
 COProp <- read.csv("~\\Gerrymander\\CO-Proportional.csv", header=TRUE) #Get Colorado Fair Map
+MIEnacted <- read.csv("~\\Gerrymander\\MI-Enacted.csv", header=TRUE)   #Get Michigan Enacted Map
+MIProp <- read.csv("~\\Gerrymander\\MI-Proportional.csv", header=TRUE) #Get Michigan Fair Map
 Map_Score <- function(Map1, Map2, Size, Begin) {
   numOfCompetitive1 = 0
   numOfD1 = 0;
@@ -58,8 +60,10 @@ Map_Score <- function(Map1, Map2, Size, Begin) {
 OHScore <- Map_Score(OHEnacted, OHProp, 15, 4)
 ILScore <- Map_Score(ILEnacted, ILProp, 17, 3)
 COScore <- Map_Score(COEnacted, COProp, 8, 4)
+MIScore <- Map_Score(MIEnacted, MIProp, 13, 3)
 print(paste("Ohios Score:", OHScore))
 print(paste("Illinois Score:", ILScore))
 print(paste("Colorado Score:", COScore))
-print(paste("The fairest map has a score of:", min(OHScore, ILScore, COScore)))
+print(paste("Michigan Score", MIScore))
+print(paste("The fairest map has a score of:", min(OHScore, ILScore, COScore, MIScore)))
 
