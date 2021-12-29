@@ -8,6 +8,8 @@ COEnacted <- read.csv("CO-Enacted.csv", header=TRUE)   #Get Colorado Enacted Map
 COProp <- read.csv("CO-Proportional.csv", header=TRUE) #Get Colorado Fair Map
 MIEnacted <- read.csv("MI-Enacted.csv", header=TRUE)   #Get Michigan Enacted Map
 MIProp <- read.csv("MI-Proportional.csv", header=TRUE) #Get Michigan Fair Map
+VAEnacted <- read.csv("VA-Enacted.csv", header=TRUE)   #Get Virginia Enacted Map
+VAProp <- read.csv("VA-Prop.csv", header=TRUE)         #Get Virginia Fair Map
 Map_Score <- function(Map1, Map2, Size, Begin) {
   numOfCompetitive1 = 0
   numOfD1 = 0;
@@ -63,9 +65,11 @@ OHScore <- Map_Score(OHEnacted, OHProp, 15, 4)
 ILScore <- Map_Score(ILEnacted, ILProp, 17, 3)
 COScore <- Map_Score(COEnacted, COProp, 8, 4)
 MIScore <- Map_Score(MIEnacted, MIProp, 13, 3)
+VAScore <- Map_Score(VAEnacted, VAProp, 11, 3)
 print(paste("Ohios Score:", OHScore))
 print(paste("Illinois Score:", ILScore))
 print(paste("Colorado Score:", COScore))
 print(paste("Michigan Score", MIScore))
-print(paste("The fairest map has a score of:", min(OHScore, ILScore, COScore, MIScore)))
+print(paste("Virgina Score", VAScore))
+print(paste("The fairest map has a score of:", min(OHScore, ILScore, COScore, MIScore, VAScore)))
 
