@@ -10,6 +10,14 @@ MIEnacted <- read.csv("MI-Enacted.csv", header=TRUE)   #Get Michigan Enacted Map
 MIProp <- read.csv("MI-Proportional.csv", header=TRUE) #Get Michigan Fair Map
 VAEnacted <- read.csv("VA-Enacted.csv", header=TRUE)   #Get Virginia Enacted Map
 VAProp <- read.csv("VA-Prop.csv", header=TRUE)         #Get Virginia Fair Map
+AZEnacted <- read.csv("AZ-Enacted.csv", header=TRUE)   #Get Arizona Enacted Map
+AZProp <- read.csv("AZ-Prop.csv", header=TRUE)         #Get Arizona Fair Map
+CAEnacted <- read.csv("CA-Enacted.csv", header=TRUE)   #Get California Enacted Map
+CAProp <- read.csv("CA-Prop.csv", header=TRUE)         #Get California Enacted Map
+TXEnacted <- read.csv("TX-Enacted.csv", header=TRUE)   #Get Texas Enacted Map
+TXProp <- read.csv("TX-Prop.csv", header=TRUE)         #Get Texas Fair Map
+NCEnacted <- read.csv("NC-Enacted.csv", header=TRUE)   #Get North Carolina Enacted Map
+NCProp <- read.csv("NC-Prop.csv", header=TRUE)         #Get North Carolina Fair Map
 Map_Score <- function(Map1, Map2, Size, Begin) {
   numOfCompetitive1 = 0
   numOfD1 = 0;
@@ -66,10 +74,18 @@ ILScore <- Map_Score(ILEnacted, ILProp, 17, 3)
 COScore <- Map_Score(COEnacted, COProp, 8, 4)
 MIScore <- Map_Score(MIEnacted, MIProp, 13, 3)
 VAScore <- Map_Score(VAEnacted, VAProp, 11, 3)
-print(paste("Ohios Score:", OHScore))
+AZScore <- Map_Score(AZEnacted, AZProp, 9, 3)
+CAScore <- Map_Score(CAEnacted, CAProp, 52, 3)
+TXScore <- Map_Score(TXEnacted, TXProp, 38, 3)
+NCScore <- Map_Score(NCEnacted, NCProp, 14, 3)
+print(paste("Ohio Score:", OHScore))
 print(paste("Illinois Score:", ILScore))
 print(paste("Colorado Score:", COScore))
 print(paste("Michigan Score", MIScore))
 print(paste("Virgina Score", VAScore))
-print(paste("The fairest map has a score of:", min(OHScore, ILScore, COScore, MIScore, VAScore)))
+print(paste("Arizona Score", AZScore))
+print(paste("California Score", CAScore))
+print(paste("Texas Score", TXScore))
+print(paste("North Carolina Score", NCScore))
+print(paste("The fairest map has a score of:", min(OHScore, ILScore, COScore, MIScore, VAScore, AZScore, CAScore, TXScore, NCScore)))
 
